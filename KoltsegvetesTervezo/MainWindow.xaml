@@ -1,0 +1,70 @@
+﻿<Window x:Class="KoltsegvetesTervezo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoltsegvetesTervezo"
+        mc:Ignorable="d"
+        Title="Havi költségvetés" Height="700" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="AliceBlue">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="26*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="26*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="26*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="37"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="0"
+                    Orientation="Horizontal">
+            <Image Source="wallet.png"
+                   Width="30"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="0 0 10 0"/>
+            <StackPanel Orientation="Vertical"
+                        Margin="0 10 0 0">
+                <TextBlock Text="Havi Költségvetés"
+                           FontSize="30"
+                           FontWeight="Bold"/>
+                <TextBlock Text="Kövese nyomon bevételeit és kiadásait"
+                           FontSize="15"
+                           Foreground="Gray"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <!--teljes bevétel-->
+        <Border Background="White"
+                Width="auto"
+                Height="130"
+                Grid.Column="1"
+                Grid.Row="2"
+                BorderBrush="LightGray"
+                BorderThickness="1"
+                CornerRadius="15">
+            <StackPanel Orientation="Vertical"
+                        Margin="15">
+                <TextBlock Text="Teljes Bevétel"
+                           Foreground="Gray"
+                           FontWeight="DemiBold"/>
+                <TextBlock Text="&#x2934; 0 Ft"
+                           FontWeight="Black"
+                           Foreground="Green"
+                           FontSize="20"
+                           Margin="0 50 0 0"/>
+            </StackPanel>
+        </Border>
+        
+    </Grid>
+</Window>
