@@ -65,6 +65,56 @@
                            Margin="0 50 0 0"/>
             </StackPanel>
         </Border>
+        <!--teljes kiadás-->
+        <Border Background="White"
+                Width="auto"
+                Height="130"
+                Grid.Column="3"
+                Grid.Row="2"
+                BorderBrush="LightGray"
+                BorderThickness="1"
+                CornerRadius="15">
+            <StackPanel Orientation="Vertical"
+                        Margin="15">
+                <TextBlock Text="Teljes Kiadás"
+                           Foreground="Gray"
+                           FontWeight="DemiBold"/>
+                <TextBlock Text="&#x2935; 0 Ft"
+                           FontWeight="Black"
+                           Foreground="Red"
+                           FontSize="20"
+                           Margin="0 50 0 0"/>
+            </StackPanel>
+        </Border>
+        <!--Egyenleg-->
+        <Border Background="White"
+                Width="auto"
+                Height="130"
+                Grid.Column="5"
+                Grid.Row="2"
+                BorderBrush="LightGray"
+                BorderThickness="1"
+                CornerRadius="15">
+            <StackPanel Orientation="Vertical"
+                        Margin="15">
+                <TextBlock Text="Egyenleg"
+                           Foreground="Gray"
+                           FontWeight="DemiBold"/>
+                <StackPanel Orientation="Horizontal" Margin="0 50 0 0">
+                    <Image Source="wallet.png"
+                   Width="20"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="0 0 10 0"/>
+                    <TextBlock Text="0 Ft"
+                           FontWeight="Black"
+                           Foreground="#FF3C78BB"
+                           FontSize="20"
+                           />
+                </StackPanel>
+                
+            </StackPanel>
+        </Border>
         
     </Grid>
 </Window>
