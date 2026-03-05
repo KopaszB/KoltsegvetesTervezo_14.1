@@ -43,7 +43,7 @@
                            Foreground="Gray"/>
             </StackPanel>
         </StackPanel>
-        
+
         <!--teljes bevétel-->
         <Border Background="White"
                 Width="auto"
@@ -112,13 +112,13 @@
                            FontSize="20"
                            />
                 </StackPanel>
-                
+
             </StackPanel>
         </Border>
-        <!--Egyenleg-->
+        <!--Bevétel hozzáadása-->
         <Border Background="White"
                 Width="auto"
-                Height="260"
+                Height="350"
                 Grid.Column="1"
                 Grid.Row="4"
                 BorderBrush="LightGray"
@@ -164,18 +164,157 @@
                         BorderBrush="Black"
                         Background="Black"
                         Padding="5"
-                        Margin="5 10">
-                    <Button Content="Bevétel Hozzáadása"
+                        Margin="5 15">
+                    <Button Content="&#10753;    Bevétel Hozzáadása"
                             Background="Transparent"
                             Foreground="White"
                             FontWeight="Bold"
                             BorderThickness="0"/>
                 </Border>
-                
+            </StackPanel>
+        </Border>
+        <!--Kiadás hozzáadása-->
+        <Border Background="White"
+        Width="auto"
+        Height="350"
+        Grid.Column="3"
+        Grid.Row="4"
+        BorderBrush="LightGray"
+        BorderThickness="1"
+        CornerRadius="15"
+        >
+            <StackPanel Orientation="Vertical"
+                Margin="15">
+                <TextBlock Text="Kiadás Hozzáadása"
+                   Foreground="Black"
+                   FontWeight="DemiBold"/>
+
+                <GroupBox Header="Kategória" BorderBrush="Transparent"
+                  FontWeight="DemiBold"
+                  Margin="0 30 0 10">
+                    <Border CornerRadius="5"
+                    BorderBrush="#FFEAEAEA"
+                    BorderThickness="1"
+                    Background="#FFEAEAEA"
+                    Margin="0 5 0 0">
+                        <ComboBox 
+                         Padding="5"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         Foreground="#FF4C4C4C">
+                            <ComboBoxItem Content="Válasszon kategóriát" IsSelected="True"/>
+                        </ComboBox>
+                    </Border>
+                </GroupBox>
+
+                <GroupBox Header="Leírás" BorderBrush="Transparent"
+                  FontWeight="DemiBold">
+                    <Border CornerRadius="5"
+                    BorderBrush="#FFEAEAEA"
+                    BorderThickness="1"
+                    Background="#FFEAEAEA"
+                    Margin="0 5 0 0">
+                        <TextBox Text="pl: Havi bérlet"
+                         Padding="5"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         Foreground="#FF4C4C4C"/>
+                    </Border>
+                </GroupBox>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <GroupBox Header="Összeg (ft)" 
+                              BorderBrush="Transparent"
+                              FontWeight="DemiBold"
+                              Margin="0 10">
+                        <Border CornerRadius="5"
+                                BorderBrush="#FFEAEAEA"
+                                BorderThickness="1"
+                                Background="#FFEAEAEA"
+                                Margin="0 5 0 0">
+                            <TextBox Text="0"
+                                     Padding="5"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Foreground="#FF4C4C4C"/>
+                        </Border>
+                    </GroupBox>
+
+                    <GroupBox Header="Dátum" 
+                              BorderBrush="Transparent"
+                              FontWeight="DemiBold"
+                              Grid.Column="1"
+                              Margin="0 10">
+                        <Border CornerRadius="5"
+                                BorderBrush="#FFEAEAEA"
+                                BorderThickness="1"
+                                Background="#FFEAEAEA"
+                                Margin="0 5 0 0">
+                            <TextBox Text="0"
+                                     Padding="5"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Foreground="#FF4C4C4C"/>
+                        </Border>
+                    </GroupBox>
+                </Grid>
+
+                <Border CornerRadius="5"
+                BorderThickness="1"
+                BorderBrush="Black"
+                Background="Black"
+                Padding="5"
+                Margin="5 5">
+                    <Button Content="&#10753;    Kiadás Hozzáadása"
+                    Background="Transparent"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderThickness="0"/>
+                </Border>
+            </StackPanel>
+        </Border>
+        <!--Kiadások-->
+        <Border Background="White"
+        Width="auto"
+        Height="350"
+        Grid.Column="5"
+        Grid.Row="4"
+        BorderBrush="LightGray"
+        BorderThickness="1"
+        CornerRadius="15"
+        >
+            <StackPanel Orientation="Vertical"
+                Margin="15">
+
+                <TextBlock Text="Kiadások"
+                   Foreground="Black"
+                   FontWeight="DemiBold"/>
+                <DataGrid Margin="0 5 0 0"
+                          AutoGenerateColumns="False"
+                          HeadersVisibility="Column"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          CanUserResizeRows="False"
+                          IsReadOnly="True"
+                          Foreground="Gray"
+                          Name="dg_kiadasok">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Dátum" Binding="{Binding Datum, StringFormat=yyyy.MM.dd}" Width="*"/>
+                        <DataGridTextColumn Header="Kategória" Binding="{Binding Kategoria}" Width="*"/>
+                        <DataGridTextColumn Header="Összeg (Ft)" Binding="{Binding Osszeg, StringFormat={}{0:N0} Ft}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
 
             </StackPanel>
         </Border>
-        
+
+
+
 
     </Grid>
 </Window>
