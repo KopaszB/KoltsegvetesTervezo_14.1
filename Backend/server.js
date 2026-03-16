@@ -141,3 +141,13 @@ app.get('/osszkiadas', (req, res) => {
         }
     );
 });
+
+//teljes bevétel törlése
+app.delete('/bevetel/mind',(req,res) => {
+    connection.query('DELETE FROM bevetel',(err,result) => {
+        if (err) {
+            return res.status(500).json({error:'Hiba a törlésnél az adatbázisban!'})
+        }
+        res.json({message: 'Az összes adat törölve lett'})
+    })
+});
