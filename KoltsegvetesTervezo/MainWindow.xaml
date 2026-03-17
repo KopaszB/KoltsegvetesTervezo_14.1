@@ -62,7 +62,8 @@
                            FontWeight="Black"
                            Foreground="Green"
                            FontSize="20"
-                           Margin="0 50 0 0"/>
+                           Margin="0 50 0 0"
+                           Name="tbl_bevetel"/>
             </StackPanel>
         </Border>
         <!--teljes kiadás-->
@@ -142,7 +143,8 @@
                                  Padding="5"
                                  Background="Transparent"
                                  BorderThickness="0"
-                                 Foreground="#FF4C4C4C"/>
+                                 Foreground="#FF4C4C4C"
+                                 Name="tbx_bevetelForras"/>
                     </Border>
                 </GroupBox>
                 <GroupBox Header="Összeg (ft)" BorderBrush="Transparent"
@@ -156,7 +158,8 @@
                                  Padding="5"
                                  Background="Transparent"
                                  BorderThickness="0"
-                                 Foreground="#FF4C4C4C"/>
+                                 Foreground="#FF4C4C4C"
+                                 Name="tbx_bevetelOsszeg"/>
                     </Border>
                 </GroupBox>
                 <Border CornerRadius="5"
@@ -169,8 +172,24 @@
                             Background="Transparent"
                             Foreground="White"
                             FontWeight="Bold"
-                            BorderThickness="0"/>
+                            BorderThickness="0"
+                            Name="btn_bevetelHozzaad" Click="btn_bevetelHozzaad_Click"/>
                 </Border>
+
+                <Border CornerRadius="5"
+                        BorderThickness="1"
+                        BorderBrush="DarkRed"
+                        Background="DarkRed"
+                        Padding="5"
+                        Margin="5 15">
+                    <Button Content="Bevételek Törlése"
+                            Background="Transparent"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            BorderThickness="0"
+                            Name="btn_bevetelTorol" Click="btn_bevetelTorol_Click"/>
+                </Border>
+
             </StackPanel>
         </Border>
         <!--Kiadás hozzáadása-->
